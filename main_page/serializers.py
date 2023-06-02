@@ -18,3 +18,8 @@ class UserFedbackSerializer(serializers.ModelSerializer):
         model = UserFeedback
         fields = '__all__'
 
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('name', 'surname',)
