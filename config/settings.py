@@ -11,7 +11,6 @@ environ.Env.read_env()
 # environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
-
 SECRET_KEY = env('SECRET_KEY', default='SOME_SECRET_KEY')
 
 
@@ -209,3 +208,14 @@ SWAGGER_SETTINGS = {
             }
         }
     }
+
+ASGI_APPLICATION = "config.asgi.application"
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
