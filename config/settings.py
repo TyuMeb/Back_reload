@@ -209,7 +209,7 @@ SWAGGER_SETTINGS = {
         }
     }
 
-ASGI_APPLICATION = "config.asgi.application"
+ASGI_APPLICATION = "Back_reload.config.asgi.application"
 
 CHANNEL_LAYERS = {
     'default': {

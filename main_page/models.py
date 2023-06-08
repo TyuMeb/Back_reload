@@ -1,6 +1,5 @@
-from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
-                                        PermissionsMixin, User)
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 
 
 class UserAccountManager(BaseUserManager):
@@ -17,7 +16,6 @@ class UserAccountManager(BaseUserManager):
         user.save()
 
         return user
-
 
     def create_superuser(self, email, name, person_telephone, surname, password=None):
 
@@ -64,6 +62,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         verbose_name = 'Пользователи'
         verbose_name_plural = 'Пользователи'
 
+
 class SellerData(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     user_account_id = models.ForeignKey(UserAccount, on_delete=models.CASCADE, null=True)
@@ -80,10 +79,8 @@ class SellerData(models.Model):
         verbose_name_plural = 'Продавцы'
 
 
-
 class UserFeedback(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     user_account_id = models.ForeignKey(UserAccount, on_delete=models.CASCADE, null=True)
     feedback_text = models.CharField('Запрос от пользователя', max_length=20, blank=True, null=True)
     feedback_created = models.DateTimeField('Дата создания обращения', auto_now=True)
-

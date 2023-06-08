@@ -22,4 +22,4 @@ class UserFedbackSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('name', 'surname',)
+        fields = ('name', 'surname', 'email')

@@ -11,7 +11,12 @@ from .serializers import ConversationListSerializer, ConversationSerializer
 @api_view(['POST'])
 def start_conversation(request, ):
     data = request.data
+    print()
+    print(request.user)
+    print()
     user_email = data.pop('email')
+    print()
+    print(user_email)
     try:
         participant = UserAccount.objects.get(email=user_email)
     except UserAccount.DoesNotExist:

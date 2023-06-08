@@ -39,6 +39,8 @@ class Message(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
+        verbose_name = 'message'
+        verbose_name_plural = 'messages'
         ordering = ('-timestamp',)
 
     def __str__(self):
