@@ -5,18 +5,15 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0017_alter_productmodel_product_description_and_more"),
+        ('products', '0017_alter_productmodel_product_description_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="productmodel",
-            name="category",
-            field=models.ForeignKey(
-                blank=True,
-                on_delete=django.db.models.deletion.CASCADE,
-                to="products.categorymodel",
-            ),
+            model_name='productmodel',
+            name='category',
+            field=models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='products.categorymodel'),
         ),
     ]

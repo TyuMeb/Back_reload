@@ -6,52 +6,22 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0001_initial"),
+        ('main_page', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="PersonalClientData",
+            name='PersonalClientData',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "person_rating",
-                    models.IntegerField(null=True, verbose_name="Рейтинг клиента"),
-                ),
-                (
-                    "person_created",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="Дата создания аккаунта"
-                    ),
-                ),
-                (
-                    "person_telephone",
-                    models.CharField(
-                        max_length=20, null=True, verbose_name="Номер телефона"
-                    ),
-                ),
-                (
-                    "person_name",
-                    models.CharField(
-                        max_length=200, null=True, verbose_name="Имя клиента"
-                    ),
-                ),
-                (
-                    "person_address",
-                    models.CharField(max_length=200, null=True, verbose_name="Адрес"),
-                ),
-                (
-                    "user_account",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('person_rating', models.IntegerField(null=True, verbose_name='Рейтинг клиента')),
+                ('person_created', models.DateTimeField(auto_now=True, verbose_name='Дата создания аккаунта')),
+                ('person_telephone', models.CharField(max_length=20, null=True, verbose_name='Номер телефона')),
+                ('person_name', models.CharField(max_length=200, null=True, verbose_name='Имя клиента')),
+                ('person_address', models.CharField(max_length=200, null=True, verbose_name='Адрес')),
+                ('user_account', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

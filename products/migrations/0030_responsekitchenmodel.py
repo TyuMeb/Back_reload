@@ -6,46 +6,24 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("products", "0029_rename_position_question_questionkitchenmodel_position"),
+        ('products', '0029_rename_position_question_questionkitchenmodel_position'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="ResponseKitchenModel",
+            name='ResponseKitchenModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "response",
-                    models.CharField(
-                        blank=True,
-                        max_length=120,
-                        null=True,
-                        verbose_name="ответ по заказу - кухня",
-                    ),
-                ),
-                (
-                    "id_question",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.questionkitchenmodel",
-                    ),
-                ),
-                (
-                    "user_account",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('response', models.CharField(blank=True, max_length=120, null=True, verbose_name='ответ по заказу - кухня')),
+                ('id_question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.questionkitchenmodel')),
+                ('user_account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Бланк ответов клиента - Кухня>",
-                "verbose_name_plural": "Бланк ответов клиента - Кухня",
+                'verbose_name': 'Бланк ответов клиента - Кухня>',
+                'verbose_name_plural': 'Бланк ответов клиента - Кухня',
             },
         ),
     ]

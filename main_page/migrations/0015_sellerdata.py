@@ -6,58 +6,22 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0014_alter_useraccount_person_address_and_more"),
+        ('main_page', '0014_alter_useraccount_person_address_and_more'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="SellerData",
+            name='SellerData',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "seller_name_company",
-                    models.CharField(
-                        blank=True, max_length=100, verbose_name="Имя компании"
-                    ),
-                ),
-                (
-                    "seller_date",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="Дата создания аккаунта продавца"
-                    ),
-                ),
-                (
-                    "seller_telephone",
-                    models.CharField(
-                        blank=True, max_length=20, verbose_name="Телефон компании"
-                    ),
-                ),
-                (
-                    "seller_requisites",
-                    models.CharField(
-                        blank=True, max_length=100, verbose_name="Реквизиты компании"
-                    ),
-                ),
-                (
-                    "seller_type_activity",
-                    models.CharField(
-                        blank=True,
-                        max_length=100,
-                        verbose_name="Болванка тут должна быть связь с видом деятельности",
-                    ),
-                ),
-                (
-                    "user_account_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('seller_name_company', models.CharField(blank=True, max_length=100, verbose_name='Имя компании')),
+                ('seller_date', models.DateTimeField(auto_now=True, verbose_name='Дата создания аккаунта продавца')),
+                ('seller_telephone', models.CharField(blank=True, max_length=20, verbose_name='Телефон компании')),
+                ('seller_requisites', models.CharField(blank=True, max_length=100, verbose_name='Реквизиты компании')),
+                ('seller_type_activity', models.CharField(blank=True, max_length=100, verbose_name='Болванка тут должна быть связь с видом деятельности')),
+                ('user_account_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

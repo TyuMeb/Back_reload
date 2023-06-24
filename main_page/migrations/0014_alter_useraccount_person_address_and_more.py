@@ -4,45 +4,35 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0013_userfeedback_user_account_id"),
+        ('main_page', '0013_userfeedback_user_account_id'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="useraccount",
-            name="person_address",
-            field=models.CharField(
-                blank=True, max_length=200, null=True, verbose_name="Адрес"
-            ),
+            model_name='useraccount',
+            name='person_address',
+            field=models.CharField(blank=True, max_length=200, null=True, verbose_name='Адрес'),
         ),
         migrations.AlterField(
-            model_name="useraccount",
-            name="person_rating",
-            field=models.IntegerField(
-                blank=True, null=True, verbose_name="Рейтинг клиента"
-            ),
+            model_name='useraccount',
+            name='person_rating',
+            field=models.IntegerField(blank=True, null=True, verbose_name='Рейтинг клиента'),
         ),
         migrations.AlterField(
-            model_name="useraccount",
-            name="person_telephone",
-            field=models.CharField(
-                blank=True, max_length=20, null=True, verbose_name="Номер телефона"
-            ),
+            model_name='useraccount',
+            name='person_telephone',
+            field=models.CharField(blank=True, max_length=20, null=True, verbose_name='Номер телефона'),
         ),
         migrations.AlterField(
-            model_name="useraccount",
-            name="surname",
+            model_name='useraccount',
+            name='surname',
             field=models.CharField(blank=True, max_length=255, null=True),
         ),
         migrations.AlterField(
-            model_name="userfeedback",
-            name="feedback_text",
-            field=models.CharField(
-                blank=True,
-                max_length=20,
-                null=True,
-                verbose_name="Запрос от пользователя",
-            ),
+            model_name='userfeedback',
+            name='feedback_text',
+            field=models.CharField(blank=True, max_length=20, null=True, verbose_name='Запрос от пользователя'),
         ),
     ]

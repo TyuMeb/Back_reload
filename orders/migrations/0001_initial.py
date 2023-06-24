@@ -6,69 +6,28 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     initial = True
 
     dependencies = [
-        ("products", "0024_alter_productimagemodel_product_id"),
+        ('products', '0024_alter_productimagemodel_product_id'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="OrderModel",
+            name='OrderModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "order_time",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="Дата создания заказа"
-                    ),
-                ),
-                (
-                    "order_description",
-                    models.CharField(
-                        blank=True, max_length=300, verbose_name="Описание заказа"
-                    ),
-                ),
-                (
-                    "state",
-                    models.CharField(
-                        choices=[
-                            ("auction", "Аукцион"),
-                            ("new", "Новый"),
-                            ("confirmed", "Подтвержден"),
-                            ("assembled", "Собран"),
-                            ("sent", "Отправлен"),
-                            ("delivered", "Доставлен"),
-                            ("canceled", "Отменен"),
-                        ],
-                        max_length=15,
-                        verbose_name="Статус",
-                    ),
-                ),
-                (
-                    "card_id",
-                    models.ForeignKey(
-                        blank=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.cardmodel",
-                    ),
-                ),
-                (
-                    "user_account",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('order_time', models.DateTimeField(auto_now=True, verbose_name='Дата создания заказа')),
+                ('order_description', models.CharField(blank=True, max_length=300, verbose_name='Описание заказа')),
+                ('state', models.CharField(choices=[('auction', 'Аукцион'), ('new', 'Новый'), ('confirmed', 'Подтвержден'), ('assembled', 'Собран'), ('sent', 'Отправлен'), ('delivered', 'Доставлен'), ('canceled', 'Отменен')], max_length=15, verbose_name='Статус')),
+                ('card_id', models.ForeignKey(blank=True, on_delete=django.db.models.deletion.CASCADE, to='products.cardmodel')),
+                ('user_account', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Заказ состоящий из продуктов",
-                "verbose_name_plural": "Заказ состоящий из продуктов",
+                'verbose_name': 'Заказ состоящий из продуктов',
+                'verbose_name_plural': 'Заказ состоящий из продуктов',
             },
         ),
     ]

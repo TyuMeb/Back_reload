@@ -4,13 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0040_alter_questionoptionsmodel_question_id"),
+        ('products', '0040_alter_questionoptionsmodel_question_id'),
     ]
 
     operations = [
         migrations.RenameModel(
-            old_name="QuestionOptionsModel",
-            new_name="QuestionOptionsKitchenModel",
+            old_name='QuestionOptionsModel',
+            new_name='QuestionOptionsKitchenModel',
         ),
     ]

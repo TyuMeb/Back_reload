@@ -6,61 +6,27 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("products", "0005_categorymodel_card_id"),
+        ('products', '0005_categorymodel_card_id'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="ProductModel",
+            name='ProductModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "product_price",
-                    models.IntegerField(null=True, verbose_name="цена предмета"),
-                ),
-                (
-                    "product_size",
-                    models.CharField(
-                        max_length=20,
-                        null=True,
-                        verbose_name="размеры высота x ширина x длина",
-                    ),
-                ),
-                (
-                    "product_description",
-                    models.CharField(max_length=20, null=True, verbose_name="описание"),
-                ),
-                (
-                    "product_units",
-                    models.IntegerField(
-                        null=True, verbose_name="количество предметов в шт."
-                    ),
-                ),
-                (
-                    "category_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.categorymodel",
-                    ),
-                ),
-                (
-                    "user_account_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('product_price', models.IntegerField(null=True, verbose_name='цена предмета')),
+                ('product_size', models.CharField(max_length=20, null=True, verbose_name='размеры высота x ширина x длина')),
+                ('product_description', models.CharField(max_length=20, null=True, verbose_name='описание')),
+                ('product_units', models.IntegerField(null=True, verbose_name='количество предметов в шт.')),
+                ('category_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='products.categorymodel')),
+                ('user_account_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Тип мебели",
-                "verbose_name_plural": "Тип мебели",
+                'verbose_name': 'Тип мебели',
+                'verbose_name_plural': 'Тип мебели',
             },
         ),
     ]

@@ -5,18 +5,15 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0039_remove_questionoptionsmodel_category"),
+        ('products', '0039_remove_questionoptionsmodel_category'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="questionoptionsmodel",
-            name="question_id",
-            field=models.ForeignKey(
-                limit_choices_to={"category_id": 4},
-                on_delete=django.db.models.deletion.CASCADE,
-                to="products.questionsproductsmodel",
-            ),
+            model_name='questionoptionsmodel',
+            name='question_id',
+            field=models.ForeignKey(limit_choices_to={'category_id': 4}, on_delete=django.db.models.deletion.CASCADE, to='products.questionsproductsmodel'),
         ),
     ]

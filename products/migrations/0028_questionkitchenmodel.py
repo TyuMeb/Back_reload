@@ -4,37 +4,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0027_productmodel_order"),
+        ('products', '0027_productmodel_order'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="QuestionKitchenModel",
+            name='QuestionKitchenModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "question",
-                    models.CharField(
-                        blank=True,
-                        max_length=120,
-                        null=True,
-                        verbose_name="вопрос по заказу - кухня",
-                    ),
-                ),
-                (
-                    "position_question",
-                    models.IntegerField(
-                        blank=True, null=True, verbose_name="номер вопроса по порядку"
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('question', models.CharField(blank=True, max_length=120, null=True, verbose_name='вопрос по заказу - кухня')),
+                ('position_question', models.IntegerField(blank=True, null=True, verbose_name='номер вопроса по порядку')),
             ],
             options={
-                "verbose_name": "Бланк вопросов - Кухня>",
-                "verbose_name_plural": "Бланк вопросов - Кухня",
+                'verbose_name': 'Бланк вопросов - Кухня>',
+                'verbose_name_plural': 'Бланк вопросов - Кухня',
             },
         ),
     ]

@@ -4,16 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0037_remove_questionoptionsmodel_option"),
+        ('products', '0037_remove_questionoptionsmodel_option'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="questionoptionsmodel",
-            name="option",
-            field=models.CharField(
-                blank=True, max_length=120, null=True, verbose_name="вариант ответа"
-            ),
+            model_name='questionoptionsmodel',
+            name='option',
+            field=models.CharField(blank=True, max_length=120, null=True, verbose_name='вариант ответа'),
         ),
     ]

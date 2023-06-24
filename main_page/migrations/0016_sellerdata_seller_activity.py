@@ -4,16 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0015_sellerdata"),
+        ('main_page', '0015_sellerdata'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="sellerdata",
-            name="seller_activity",
-            field=models.BooleanField(
-                default=False, verbose_name="Активен / Не активен"
-            ),
+            model_name='sellerdata',
+            name='seller_activity',
+            field=models.BooleanField(default=False, verbose_name='Активен / Не активен'),
         ),
     ]

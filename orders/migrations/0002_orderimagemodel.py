@@ -6,36 +6,22 @@ import orders.models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("orders", "0001_initial"),
+        ('orders', '0001_initial'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="OrderImageModel",
+            name='OrderImageModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "image",
-                    models.ImageField(
-                        blank=True, null=True, upload_to=orders.models.nameFile
-                    ),
-                ),
-                (
-                    "order_id",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="order_id",
-                        to="orders.ordermodel",
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('image', models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile)),
+                ('order_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='order_id', to='orders.ordermodel')),
             ],
             options={
-                "verbose_name": "Изображения - заказ пользователя",
-                "verbose_name_plural": "Изображения - заказ пользователя",
+                'verbose_name': 'Изображения - заказ пользователя',
+                'verbose_name_plural': 'Изображения - заказ пользователя',
             },
         ),
     ]

@@ -4,13 +4,14 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0011_userfeedback"),
+        ('main_page', '0011_userfeedback'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="userfeedback",
-            name="user_account_id",
+            model_name='userfeedback',
+            name='user_account_id',
         ),
     ]

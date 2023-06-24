@@ -5,49 +5,40 @@ import orders.models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("orders", "0003_remove_ordermodel_card_id_alter_ordermodel_state"),
+        ('orders', '0003_remove_ordermodel_card_id_alter_ordermodel_state'),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name="orderimagemodel",
-            old_name="image",
-            new_name="image_1",
+            model_name='orderimagemodel',
+            old_name='image',
+            new_name='image_1',
         ),
         migrations.AddField(
-            model_name="orderimagemodel",
-            name="image_2",
-            field=models.ImageField(
-                blank=True, null=True, upload_to=orders.models.nameFile
-            ),
+            model_name='orderimagemodel',
+            name='image_2',
+            field=models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile),
         ),
         migrations.AddField(
-            model_name="orderimagemodel",
-            name="image_3",
-            field=models.ImageField(
-                blank=True, null=True, upload_to=orders.models.nameFile
-            ),
+            model_name='orderimagemodel',
+            name='image_3',
+            field=models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile),
         ),
         migrations.AddField(
-            model_name="orderimagemodel",
-            name="image_4",
-            field=models.ImageField(
-                blank=True, null=True, upload_to=orders.models.nameFile
-            ),
+            model_name='orderimagemodel',
+            name='image_4',
+            field=models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile),
         ),
         migrations.AddField(
-            model_name="orderimagemodel",
-            name="image_5",
-            field=models.ImageField(
-                blank=True, null=True, upload_to=orders.models.nameFile
-            ),
+            model_name='orderimagemodel',
+            name='image_5',
+            field=models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile),
         ),
         migrations.AddField(
-            model_name="orderimagemodel",
-            name="image_6",
-            field=models.ImageField(
-                blank=True, null=True, upload_to=orders.models.nameFile
-            ),
+            model_name='orderimagemodel',
+            name='image_6',
+            field=models.ImageField(blank=True, null=True, upload_to=orders.models.nameFile),
         ),
     ]

@@ -6,19 +6,16 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("orders", "0006_remove_orderoffer_seller_id"),
+        ('orders', '0006_remove_orderoffer_seller_id'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="orderoffer",
-            name="user_account",
-            field=models.ForeignKey(
-                null=True,
-                on_delete=django.db.models.deletion.CASCADE,
-                to=settings.AUTH_USER_MODEL,
-            ),
+            model_name='orderoffer',
+            name='user_account',
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]

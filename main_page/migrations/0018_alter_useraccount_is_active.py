@@ -4,14 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0017_alter_sellerdata_options_alter_useraccount_options"),
+        ('main_page', '0017_alter_sellerdata_options_alter_useraccount_options'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="useraccount",
-            name="is_active",
+            model_name='useraccount',
+            name='is_active',
             field=models.BooleanField(default=False),
         ),
     ]

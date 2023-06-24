@@ -4,14 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0002_categorymodel"),
+        ('products', '0002_categorymodel'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="categorymodel",
-            name="user_account_id",
-            field=models.ManyToManyField(to="products.cardmodel"),
+            model_name='categorymodel',
+            name='user_account_id',
+            field=models.ManyToManyField(to='products.cardmodel'),
         ),
     ]

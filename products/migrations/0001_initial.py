@@ -4,24 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     initial = True
 
-    dependencies = []
+    dependencies = [
+    ]
 
     operations = [
         migrations.CreateModel(
-            name="CardModel",
+            name='CardModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "card_name",
-                    models.CharField(
-                        max_length=20, null=True, verbose_name="тип - кухня, гостиная"
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('card_name', models.CharField(max_length=20, null=True, verbose_name='тип - кухня, гостиная')),
             ],
         ),
     ]

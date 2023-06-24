@@ -5,44 +5,23 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0032_delete_questionkitchenmodel"),
+        ('products', '0032_delete_questionkitchenmodel'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="QuestionsProductsModel",
+            name='QuestionsProductsModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "question",
-                    models.CharField(
-                        blank=True,
-                        max_length=120,
-                        null=True,
-                        verbose_name="вопрос по заказу",
-                    ),
-                ),
-                (
-                    "position",
-                    models.IntegerField(
-                        blank=True, null=True, verbose_name="номер вопроса по порядку"
-                    ),
-                ),
-                (
-                    "category_id",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.categorymodel",
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('question', models.CharField(blank=True, max_length=120, null=True, verbose_name='вопрос по заказу')),
+                ('position', models.IntegerField(blank=True, null=True, verbose_name='номер вопроса по порядку')),
+                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.categorymodel')),
             ],
             options={
-                "verbose_name": "Бланк вопросов",
-                "verbose_name_plural": "Бланк вопросов",
+                'verbose_name': 'Бланк вопросов',
+                'verbose_name_plural': 'Бланк вопросов',
             },
         ),
     ]

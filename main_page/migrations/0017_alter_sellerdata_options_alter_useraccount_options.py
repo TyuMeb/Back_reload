@@ -4,20 +4,18 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0016_sellerdata_seller_activity"),
+        ('main_page', '0016_sellerdata_seller_activity'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="sellerdata",
-            options={"verbose_name": "Продавцы", "verbose_name_plural": "Продавцы"},
+            name='sellerdata',
+            options={'verbose_name': 'Продавцы', 'verbose_name_plural': 'Продавцы'},
         ),
         migrations.AlterModelOptions(
-            name="useraccount",
-            options={
-                "verbose_name": "Пользователи",
-                "verbose_name_plural": "Пользователи",
-            },
+            name='useraccount',
+            options={'verbose_name': 'Пользователи', 'verbose_name_plural': 'Пользователи'},
         ),
     ]

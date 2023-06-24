@@ -4,14 +4,15 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0008_useraccount_is_partner"),
+        ('main_page', '0008_useraccount_is_partner'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="useraccount",
-            name="surname",
+            model_name='useraccount',
+            name='surname',
             field=models.CharField(max_length=255, null=True),
         ),
     ]

@@ -4,19 +4,20 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0014_alter_productmodel_category_and_more"),
+        ('products', '0014_alter_productmodel_category_and_more'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_description",
-            field=models.CharField(max_length=350, null=True, verbose_name="описание"),
+            model_name='productmodel',
+            name='product_description',
+            field=models.CharField(max_length=350, null=True, verbose_name='описание'),
         ),
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_price",
-            field=models.IntegerField(null=True, verbose_name="цена предмета"),
+            model_name='productmodel',
+            name='product_price',
+            field=models.IntegerField(null=True, verbose_name='цена предмета'),
         ),
     ]

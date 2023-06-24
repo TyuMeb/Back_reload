@@ -6,39 +6,26 @@ import products.models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0022_alter_productmodel_image"),
+        ('products', '0022_alter_productmodel_image'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="productmodel",
-            name="image",
+            model_name='productmodel',
+            name='image',
         ),
         migrations.CreateModel(
-            name="ProductImageModel",
+            name='ProductImageModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "image",
-                    models.ImageField(
-                        blank=True, null=True, upload_to=products.models.nameFile
-                    ),
-                ),
-                (
-                    "product_id",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.productmodel",
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('image', models.ImageField(blank=True, null=True, upload_to=products.models.nameFile)),
+                ('product_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.productmodel')),
             ],
             options={
-                "verbose_name": "Изображения - продукты пользователя",
-                "verbose_name_plural": "Изображения - продукты пользователя",
+                'verbose_name': 'Изображения - продукты пользователя',
+                'verbose_name_plural': 'Изображения - продукты пользователя',
             },
         ),
     ]

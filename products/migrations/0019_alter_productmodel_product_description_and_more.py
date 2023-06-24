@@ -4,40 +4,30 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0018_alter_productmodel_category"),
+        ('products', '0018_alter_productmodel_category'),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_description",
-            field=models.CharField(
-                blank=True, max_length=350, null=True, verbose_name="описание"
-            ),
+            model_name='productmodel',
+            name='product_description',
+            field=models.CharField(blank=True, max_length=350, null=True, verbose_name='описание'),
         ),
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_price",
-            field=models.IntegerField(
-                blank=True, null=True, verbose_name="цена предмета"
-            ),
+            model_name='productmodel',
+            name='product_price',
+            field=models.IntegerField(blank=True, null=True, verbose_name='цена предмета'),
         ),
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_size",
-            field=models.CharField(
-                blank=True,
-                max_length=20,
-                null=True,
-                verbose_name="размеры высота x ширина x длина",
-            ),
+            model_name='productmodel',
+            name='product_size',
+            field=models.CharField(blank=True, max_length=20, null=True, verbose_name='размеры высота x ширина x длина'),
         ),
         migrations.AlterField(
-            model_name="productmodel",
-            name="product_units",
-            field=models.IntegerField(
-                blank=True, null=True, verbose_name="количество предметов в шт."
-            ),
+            model_name='productmodel',
+            name='product_units',
+            field=models.IntegerField(blank=True, null=True, verbose_name='количество предметов в шт.'),
         ),
     ]

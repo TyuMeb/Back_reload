@@ -5,71 +5,28 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0017_alter_sellerdata_options_alter_useraccount_options"),
-        ("orders", "0004_rename_image_orderimagemodel_image_1_and_more"),
+        ('main_page', '0017_alter_sellerdata_options_alter_useraccount_options'),
+        ('orders', '0004_rename_image_orderimagemodel_image_1_and_more'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="OrderOffer",
+            name='OrderOffer',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "offer_create_at",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="Дата создания офера"
-                    ),
-                ),
-                (
-                    "offer_price",
-                    models.CharField(
-                        blank=True, max_length=300, verbose_name="Цена офера"
-                    ),
-                ),
-                (
-                    "offer_execution_time",
-                    models.CharField(
-                        blank=True,
-                        max_length=300,
-                        verbose_name="Время выполнения офера",
-                    ),
-                ),
-                (
-                    "offer_description",
-                    models.CharField(
-                        blank=True, max_length=300, verbose_name="Описание офера"
-                    ),
-                ),
-                (
-                    "offer_status",
-                    models.BooleanField(
-                        default=False, verbose_name="Принят офер или нет"
-                    ),
-                ),
-                (
-                    "order_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="orders.ordermodel",
-                    ),
-                ),
-                (
-                    "seller_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="main_page.sellerdata",
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('offer_create_at', models.DateTimeField(auto_now=True, verbose_name='Дата создания офера')),
+                ('offer_price', models.CharField(blank=True, max_length=300, verbose_name='Цена офера')),
+                ('offer_execution_time', models.CharField(blank=True, max_length=300, verbose_name='Время выполнения офера')),
+                ('offer_description', models.CharField(blank=True, max_length=300, verbose_name='Описание офера')),
+                ('offer_status', models.BooleanField(default=False, verbose_name='Принят офер или нет')),
+                ('order_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='orders.ordermodel')),
+                ('seller_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='main_page.sellerdata')),
             ],
             options={
-                "verbose_name": "Офер",
-                "verbose_name_plural": "Офер",
+                'verbose_name': 'Офер',
+                'verbose_name_plural': 'Офер',
             },
         ),
     ]

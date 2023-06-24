@@ -6,55 +6,25 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("products", "0033_questionsproductsmodel"),
+        ('products', '0033_questionsproductsmodel'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="ResponseModel",
+            name='ResponseModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "response",
-                    models.CharField(
-                        blank=True,
-                        max_length=120,
-                        null=True,
-                        verbose_name="ответ по заказу",
-                    ),
-                ),
-                (
-                    "position",
-                    models.CharField(
-                        blank=True,
-                        max_length=10,
-                        null=True,
-                        verbose_name="номер ответа по порядку",
-                    ),
-                ),
-                (
-                    "id_question",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="products.questionsproductsmodel",
-                    ),
-                ),
-                (
-                    "user_account",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('response', models.CharField(blank=True, max_length=120, null=True, verbose_name='ответ по заказу')),
+                ('position', models.CharField(blank=True, max_length=10, null=True, verbose_name='номер ответа по порядку')),
+                ('id_question', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='products.questionsproductsmodel')),
+                ('user_account', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Бланк ответов клиента",
-                "verbose_name_plural": "Бланк ответов клиента",
+                'verbose_name': 'Бланк ответов клиента',
+                'verbose_name_plural': 'Бланк ответов клиента',
             },
         ),
     ]

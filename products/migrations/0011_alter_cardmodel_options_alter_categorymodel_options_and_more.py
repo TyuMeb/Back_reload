@@ -4,30 +4,23 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0010_productmodel_is_ended_and_more"),
+        ('products', '0010_productmodel_is_ended_and_more'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="cardmodel",
-            options={
-                "verbose_name": "Тип комнаты - CardModel",
-                "verbose_name_plural": "Тип комнаты - CardModel",
-            },
+            name='cardmodel',
+            options={'verbose_name': 'Тип комнаты - CardModel', 'verbose_name_plural': 'Тип комнаты - CardModel'},
         ),
         migrations.AlterModelOptions(
-            name="categorymodel",
-            options={
-                "verbose_name": "Тип мебели - Category",
-                "verbose_name_plural": "Тип мебели - Category",
-            },
+            name='categorymodel',
+            options={'verbose_name': 'Тип мебели - Category', 'verbose_name_plural': 'Тип мебели - Category'},
         ),
         migrations.AlterField(
-            model_name="productmodel",
-            name="is_ended",
-            field=models.BooleanField(
-                default=False, verbose_name="завершено ли создание предмета заказа?"
-            ),
+            model_name='productmodel',
+            name='is_ended',
+            field=models.BooleanField(default=False, verbose_name='завершено ли создание предмета заказа?'),
         ),
     ]

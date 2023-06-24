@@ -6,45 +6,28 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ("products", "0007_alter_productmodel_options_and_more"),
+        ('products', '0007_alter_productmodel_options_and_more'),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name="productmodel",
-            options={
-                "verbose_name": "Предмет для заказа",
-                "verbose_name_plural": "Предмет для заказа",
-            },
+            name='productmodel',
+            options={'verbose_name': 'Предмет для заказа', 'verbose_name_plural': 'Предмет для заказа'},
         ),
         migrations.CreateModel(
-            name="KitModel",
+            name='KitModel',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "kit_name",
-                    models.CharField(
-                        max_length=20, null=True, verbose_name="название заказа"
-                    ),
-                ),
-                ("product_id", models.ManyToManyField(to="products.productmodel")),
-                (
-                    "user_account_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('kit_name', models.CharField(max_length=20, null=True, verbose_name='название заказа')),
+                ('product_id', models.ManyToManyField(to='products.productmodel')),
+                ('user_account_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
-                "verbose_name": "Заказ состоящий из продуктов",
-                "verbose_name_plural": "Заказ состоящий из продуктов",
+                'verbose_name': 'Заказ состоящий из продуктов',
+                'verbose_name_plural': 'Заказ состоящий из продуктов',
             },
         ),
     ]

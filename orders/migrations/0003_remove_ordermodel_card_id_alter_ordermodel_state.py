@@ -4,31 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("orders", "0002_orderimagemodel"),
+        ('orders', '0002_orderimagemodel'),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name="ordermodel",
-            name="card_id",
+            model_name='ordermodel',
+            name='card_id',
         ),
         migrations.AlterField(
-            model_name="ordermodel",
-            name="state",
-            field=models.CharField(
-                choices=[
-                    ("creating", "Создание заказа"),
-                    ("auction", "Аукцион"),
-                    ("new", "Новый"),
-                    ("confirmed", "Подтвержден"),
-                    ("assembled", "Собран"),
-                    ("sent", "Отправлен"),
-                    ("delivered", "Доставлен"),
-                    ("canceled", "Отменен"),
-                ],
-                max_length=15,
-                verbose_name="Статус",
-            ),
+            model_name='ordermodel',
+            name='state',
+            field=models.CharField(choices=[('creating', 'Создание заказа'), ('auction', 'Аукцион'), ('new', 'Новый'), ('confirmed', 'Подтвержден'), ('assembled', 'Собран'), ('sent', 'Отправлен'), ('delivered', 'Доставлен'), ('canceled', 'Отменен')], max_length=15, verbose_name='Статус'),
         ),
     ]

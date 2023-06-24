@@ -6,39 +6,19 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0010_delete_personalclientdata"),
+        ('main_page', '0010_delete_personalclientdata'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="UserFeedback",
+            name='UserFeedback',
             fields=[
-                (
-                    "id",
-                    models.AutoField(primary_key=True, serialize=False, unique=True),
-                ),
-                (
-                    "feedback_text",
-                    models.CharField(
-                        max_length=20, null=True, verbose_name="Запрос от пользователя"
-                    ),
-                ),
-                (
-                    "feedback_created",
-                    models.DateTimeField(
-                        auto_now=True, verbose_name="Дата создания обращения"
-                    ),
-                ),
-                (
-                    "user_account_id",
-                    models.ForeignKey(
-                        null=True,
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                        unique=True,
-                    ),
-                ),
+                ('id', models.AutoField(primary_key=True, serialize=False, unique=True)),
+                ('feedback_text', models.CharField(max_length=20, null=True, verbose_name='Запрос от пользователя')),
+                ('feedback_created', models.DateTimeField(auto_now=True, verbose_name='Дата создания обращения')),
+                ('user_account_id', models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, unique=True)),
             ],
         ),
     ]

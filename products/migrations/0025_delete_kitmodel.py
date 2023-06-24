@@ -4,12 +4,13 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0024_alter_productimagemodel_product_id"),
+        ('products', '0024_alter_productimagemodel_product_id'),
     ]
 
     operations = [
         migrations.DeleteModel(
-            name="KitModel",
+            name='KitModel',
         ),
     ]

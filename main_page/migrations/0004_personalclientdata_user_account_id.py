@@ -6,18 +6,15 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("main_page", "0003_remove_personalclientdata_user_account"),
+        ('main_page', '0003_remove_personalclientdata_user_account'),
     ]
 
     operations = [
         migrations.AddField(
-            model_name="personalclientdata",
-            name="user_account_id",
-            field=models.ForeignKey(
-                null=True,
-                on_delete=django.db.models.deletion.CASCADE,
-                to=settings.AUTH_USER_MODEL,
-            ),
+            model_name='personalclientdata',
+            name='user_account_id',
+            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]

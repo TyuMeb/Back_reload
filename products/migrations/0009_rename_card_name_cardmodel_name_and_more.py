@@ -4,44 +4,45 @@ from django.db import migrations
 
 
 class Migration(migrations.Migration):
+
     dependencies = [
-        ("products", "0008_alter_productmodel_options_kitmodel"),
+        ('products', '0008_alter_productmodel_options_kitmodel'),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name="cardmodel",
-            old_name="card_name",
-            new_name="name",
+            model_name='cardmodel',
+            old_name='card_name',
+            new_name='name',
         ),
         migrations.RenameField(
-            model_name="categorymodel",
-            old_name="card_id",
-            new_name="card",
+            model_name='categorymodel',
+            old_name='card_id',
+            new_name='card',
         ),
         migrations.RenameField(
-            model_name="categorymodel",
-            old_name="category_name",
-            new_name="name",
+            model_name='categorymodel',
+            old_name='category_name',
+            new_name='name',
         ),
         migrations.RenameField(
-            model_name="kitmodel",
-            old_name="product_id",
-            new_name="product",
+            model_name='kitmodel',
+            old_name='product_id',
+            new_name='product',
         ),
         migrations.RenameField(
-            model_name="kitmodel",
-            old_name="user_account_id",
-            new_name="user_account",
+            model_name='kitmodel',
+            old_name='user_account_id',
+            new_name='user_account',
         ),
         migrations.RenameField(
-            model_name="productmodel",
-            old_name="category_id",
-            new_name="category",
+            model_name='productmodel',
+            old_name='category_id',
+            new_name='category',
         ),
         migrations.RenameField(
-            model_name="productmodel",
-            old_name="user_account_id",
-            new_name="user_account",
+            model_name='productmodel',
+            old_name='user_account_id',
+            new_name='user_account',
         ),
     ]
